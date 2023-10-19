@@ -1,5 +1,7 @@
 package com.yoga.githubusertest.feature.usermain.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -17,6 +19,13 @@ import kotlinx.android.synthetic.main.activity_main_users.*
 
 @AndroidEntryPoint
 class UserMainActivity : AppCompatActivity(){
+
+    companion object {
+        fun start(context: Context) {
+            val intent = Intent(context, UserMainActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
 
     private lateinit var binding: ActivityMainUsersBinding
     private val viewModel : UserMainViewModel by viewModels()
